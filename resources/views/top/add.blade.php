@@ -17,7 +17,7 @@
     <div class="alert alert-danger">There is/are validated item(s)</div>
   @endif
 
-  <form action="/top/add" method="post">
+  <form action="/data/top/add" method="post">
     {{csrf_field()}}
     <div class="form-group row">
       <label for="inputDate" class="col-sm-3 col-form-label col-form-label-sm">Target_date</label>

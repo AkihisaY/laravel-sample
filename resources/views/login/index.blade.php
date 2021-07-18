@@ -27,7 +27,7 @@
         <div id="output"></div>
         <div class="avatar"></div>
         <div class="form-box">
-            <form action="/login" method="post">
+            <form action="/data/login" method="post">
                 @csrf
                 <input name="user_name" type="text" placeholder="username">
                 <input name="user_pass" type="password" placeholder="password">

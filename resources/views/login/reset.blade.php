@@ -13,7 +13,7 @@
 
   <div class="alert alert-primary mt-5" role="alert">Plese fill out items.</div>
 
-  <form action="/reset" method="post">
+  <form action="/data/reset" method="post">
     {{csrf_field()}}
     <div class="form-group">
       <label for="formControlUser">User Name</label>

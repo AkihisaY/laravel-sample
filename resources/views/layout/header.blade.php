@@ -2,9 +2,9 @@
 <header class="header">
   <nav class="navbar navbar-expand-lg navbar-light bg-light shadow fixed-top">
       @if(Session::get('user_name') != '')
-        <a class="navbar-brand" href="/top">
+        <a class="navbar-brand" href="/data/top">
       @else
-        <a class="navbar-brand" href="/logout">
+        <a class="navbar-brand" href="/data/logout">
       @endif
         <i class="fas fa-street-view"></i> PersonalInfo
       </a>
@@ -22,13 +22,13 @@
       <div class="collapse navbar-collapse" id="navbarToogleContent">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
-            <a class="nav-link" href="/analysis"><i class="fas fa-chart-pie"></i> Analysis</a>
+            <a class="nav-link" href="/data/analysis"><i class="fas fa-chart-pie"></i> Analysis</a>
           </li>
           <li class="nav-item active">
-            <a class="nav-link" href="/api"><i class="fas fa-key"></i> Apikey</a>
+            <a class="nav-link" href="/data/api"><i class="fas fa-key"></i> Apikey</a>
           </li>
           <li class="nav-item active">
-            <a class="nav-link" href="/document"><i class="fas fa-folder-open"></i> Document</a>
+            <a class="nav-link" href="/data/document"><i class="fas fa-folder-open"></i> Document</a>
           </li>
         </ul>
 
@@ -45,7 +45,7 @@
                   </a>
                   <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                       <a class="dropdown-item" href="#">Menu</a>
-                      <a class="dropdown-item" href="/logout">Logout</a>
+                      <a class="dropdown-item" href="/data/logout">Logout</a>
                   </div>
           </li>
         </ul>

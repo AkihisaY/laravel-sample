@@ -32,7 +32,7 @@
       <p class="h5 mt-3">Asset List</p>
     </div>
     <div class="col-sm-3">
-      <a class="btn btn-success btn-sm mt-1" href="/top/add">Create New</a>
+      <a class="btn btn-success btn-sm mt-1" href="/data/top/add">Create New</a>
     </div>
   </div>
   <div class="row">

@@ -3,7 +3,7 @@
 function creaetKey(){
     ajax_action();
     function ajax_action(){
-        var url = '/api/create';
+        var url = '/data/api/create';
         $.ajax({
             headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
             url : url,
@@ -17,7 +17,7 @@ function creaetKey(){
             // console.log(data.status);
             if(data.status){
                 alert('Success to register project key!');
-                window.location.href = "/api";
+                window.location.href = "/data/api";
             }else{
                 alert('Unexpected Error! Please contact your system administrator.');
             }
@@ -33,9 +33,9 @@ function creaetKey(){
 function updateKey(id,action_flg){
     ajax_action(id,action_flg);
     function ajax_action(id,action_flg){
-        var url = '/api/delete';
+        var url = '/data/api/delete';
         if(action_flg != '1'){
-            url = '/api/recover';
+            url = '/data/api/recover';
         }
         $.ajax({
             headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
@@ -49,7 +49,7 @@ function updateKey(id,action_flg){
         .done(function(data){
             if(data.status){
                 alert('Success to update project key!');
-                window.location.href = "/api";
+                window.location.href = "/data/api";
             }else{
                 alert('Unexpected Error! Please contact your system administrator.');
             }

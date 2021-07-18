@@ -7,10 +7,10 @@ $(function(){
 });
 
 function ajax_func(){
-    var url = '/top/stocks';
+    var url = '/data/top/stocks';
     for(i = 0 ; i < 2 ; i++){
         if(i == 1){
-            url = '/top/assets';
+            url = '/data/top/assets';
         }
         ajax_action(url,i);
     }
@@ -183,7 +183,7 @@ function deleteData(id){
     console.log(id);
     ajax_action(id);
     function ajax_action(id){
-        var url = '/top/delete';
+        var url = '/data/top/delete';
         $.ajax({
             haeder:{ 'X-CSRF-TOKEN' : $('meta[name="csrf-token"]').attr('content')},
             url : url,

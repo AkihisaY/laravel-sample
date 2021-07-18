@@ -12,7 +12,7 @@
 <div class="container">
     <div class="alert alert-danger mt-3" role="alert"><strong>Session Time out Error </strong></div>
 
-    <p><a href="/login">Please login again</a></p>
+    <p><a href="/data/login">Please login again</a></p>
 </div>
 @endsection
 
