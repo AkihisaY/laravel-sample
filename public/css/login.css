@@ -1,4 +1,5 @@
-body{background: #eee url(http://localhost:8000/img/landscape.jpg);}
+/* body{background: #eee url(http://localhost/data/img/landscape.jpg);} */
+body{background: #eee}
 html,body{
     position: relative;
     height: 100%;
