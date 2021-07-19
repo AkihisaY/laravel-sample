@@ -3,7 +3,7 @@
 function createLogin(){
     ajax_action();
     function ajax_action(){
-        var url = '/login/create';
+        var url = '/data/login/create';
         $.ajax({
             headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
             url : url,
@@ -18,7 +18,7 @@ function createLogin(){
             console.log(data.status);
             alert('Success to register login information!');
             // location.reload();
-            window.location.href = "/login";
+            window.location.href = "/data/login";
         })
         .fail(function(XMLHttpRequest, textStatus, errorThrown){
             alert('Please reach out System Administrator');            

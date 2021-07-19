@@ -18,7 +18,7 @@ class Login extends Model
      * @return boolean true false 
      */
     public function getLoginPassword($user_name){
-        DB::beginTransaction();
+        // DB::beginTransaction();
         try{
             $query = DB::table('m_login')
                     ->select(DB::raw('pass'))
@@ -41,14 +41,14 @@ class Login extends Model
     public function createLoginInfo($user_name,$password){
         DB::beginTransaction();
         try{
-            DB::table('m_login')
-            ->insert([
+            $user_id = DB::table('m_login')
+            ->insertGetId([
                 'user_name' => $user_name
                 ,'pass' => $password
                 ,'create_date' => NOW()
-            ]);
-
+            ],'user_id');
             DB::commit();
+            Log::debug(' Login Usr Id : '.$user_id);
             return true;
         }catch(\Throwable $e){
             Log::debug($e->getMessage());
@@ -64,7 +64,7 @@ class Login extends Model
      * @return boolean true false 
      */
     public function getUserInfo($user_name){
-        DB::beginTransaction();
+        // DB::beginTransaction();
         try{
             $query = DB::table('m_login')
             ->select('user_id','pass')
@@ -87,7 +87,7 @@ class Login extends Model
      * @return boolean true false 
      */
     public function isAlreadyEuserxists($user_name){
-        DB::beginTransaction();
+        // DB::beginTransaction();
         try{
             $query = DB::table('m_login')
                 ->select(DB::raw('count(user_id) as cnt'))

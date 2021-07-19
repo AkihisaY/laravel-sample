@@ -24,8 +24,8 @@ class Api extends Model
             ->select(
                 'asset_id'
                 ,DB::raw("to_char(target_date,'mm/yyyy') as target_date")
-                ,'cash_jpy','cash_dol'
-                ,'cash_inv_jpy','cash_inv_dol'
+                ,'cash_jpy','cash_usd'
+                ,'cash_inv_jpy','cash_inv_usd'
                 ,'stock_us','stock_other'
             )
             ->where(DB::raw("to_char(target_date,'yyyymm')"),'=',$tmp_date)
@@ -51,12 +51,12 @@ class Api extends Model
                     'asset_id'
                     ,DB::raw("to_char(target_date,'mm/yyyy') as date")
                     ,'cash_jpy'
-                    ,'cash_dol'
+                    ,'cash_usd'
                     ,'cash_inv_jpy'
-                    ,'cash_inv_dol'
+                    ,'cash_inv_usd'
                     ,'stock_us'
                     ,'stock_other'
-                    ,DB::raw("(cash_jpy + cash_dol + cash_inv_jpy + cash_inv_dol + stock_us + stock_other) as total_amount")
+                    ,DB::raw("(cash_jpy + cash_usd + cash_inv_jpy + cash_inv_usd + stock_us + stock_other) as total_amount")
                 )
                 ->Where(DB::raw("COALESCE(delete_flg,'')"),'<>','1')
                 ->limit(100)

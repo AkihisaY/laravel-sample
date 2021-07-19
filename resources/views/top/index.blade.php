@@ -43,10 +43,10 @@
             <th scope="col"><small><strong>Asset ID</strong></small></th>
             <th scope="col"><small><strong>Date</strong></small></th>
             <th scope="col"><small><strong>Cash(JPY)</strong></small></th>
-            <th scope="col"><small><strong>Cash(EN)</strong></small></th>
+            <th scope="col"><small><strong>Cash(USD)</strong></small></th>
             <th scope="col"><small><strong>Cash For Inve(JPY)</strong></small></th>
-            <th scope="col"><small><strong>Cash For Inve(EN)</strong></small></th>
-            <th scope="col"><small><strong>Stock(JPY)</strong></small></th>
+            <th scope="col"><small><strong>Cash For Inve(USD)</strong></small></th>
+            <th scope="col"><small><strong>Stock(US)</strong></small></th>
             <th scope="col"><small><strong>Total</strong></small></th>
             <th scope="col"><small><strong>rate(/100Yen)</strong></small></th>
             <th scope="col"></th>
@@ -58,11 +58,11 @@
             <td><small>{{ $asset->asset_id}}</small></td>
             <td><small>{{ $asset->display_date}}</small></td>
             <td><small>{{ number_format($asset->cash_jpy) }}</small></td>
-            <td><small>{{ number_format($asset->cash_dol) }}</small></td>
+            <td><small>{{ number_format($asset->cash_usd) }}</small></td>
             <td><small>{{ number_format($asset->cash_inv_jpy) }}</small></td>
-            <td><small>{{ number_format($asset->cash_inv_dol) }}</small></td>
+            <td><small>{{ number_format($asset->cash_inv_usd) }}</small></td>
             <td><small>{{ number_format($asset->stock_us) }}</small></td>
-            <td><small>{{ number_format($asset->cash_jpy+$asset->cash_dol+$asset->cash_inv_jpy+$asset->stock_us) }}</small></td>
+            <td><small>{{ number_format($asset->cash_jpy+$asset->cash_usd+$asset->cash_inv_jpy+$asset->cash_inv_usd+$asset->stock_us) }}</small></td>
             <td><small>{{ $asset->rate }}</small></td>
             <td><small><button type="button" class="btn btn-danger btn-sm" onclick="deleteData('{{ $asset->asset_id }}')"><i class="fas fa-trash-alt"></i></button></small></td>
           </tr>

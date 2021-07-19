@@ -32,7 +32,7 @@
                 <input name="user_name" type="text" placeholder="username">
                 <input name="user_pass" type="password" placeholder="password">
                 <button class="btn btn-info btn-block login" type="submit">Login</button>
-                <a href="/login/add">Create Account</a>
+                <a href="/data/login/add">Create Account</a>
             </form>
         </div>
   </div>

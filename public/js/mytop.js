@@ -46,17 +46,17 @@ function donutsChart($asset){
         type: 'doughnut',
         data: {
             labels: [
-              'Cash(J)',
-              'Cash(D)',
-              'Inv(J)',
-              'Inv(D)',
-              'Stock(US)',
+              'Cash(JPY)',
+              'Cash(USD)',
+              'Inv(JPY)',
+              'Inv(USD)',
+              'Stock(USD)',
               'Stock(Other)'
             ],
             datasets: [{
               label: 'Asset Category',
-              data: [$asset[0]['cash_jpy'], $asset[0]['cash_dol']
-                    ,$asset[0]['cash_inv_jpy'],$asset[0]['cash_inv_dol']
+              data: [$asset[0]['cash_jpy'], $asset[0]['cash_usd']
+                    ,$asset[0]['cash_inv_jpy'],$asset[0]['cash_inv_usd']
                     ,$asset[0]['stock_us'],$asset[0]['stock_other']],
               backgroundColor: [
                 'rgb(54, 162, 235)',
@@ -124,9 +124,9 @@ function barChart(asset){
     while(cont >= 0){
         arr_label.push(asset[cont]['input_date']);
         arr_cash_jp.push(asset[cont]['cash_jpy']);
-        arr_cash_en.push(asset[cont]['cash_dol']);
+        arr_cash_en.push(asset[cont]['cash_usd']);
         arr_inv_jp.push(asset[cont]['cash_inv_jpy']);
-        arr_inv_en.push(asset[cont]['cash_inv_dol']);
+        arr_inv_en.push(asset[cont]['cash_inv_usd']);
         arr_stock_us.push(asset[cont]['stock_us']);
         arr_stock_other.push(asset[cont]['stock_other']);
         cont -= 1;
@@ -137,26 +137,26 @@ function barChart(asset){
         data: {
             labels: arr_label,
             datasets: [{
-                label: "Cash(J)",
+                label: "Cash(JPY)",
                 backgroundColor: "orange",
                 data: arr_cash_jp
             },
              {
-                label: "Cash(D)",
+                label: "Cash(USD)",
                 // borderWidth:1,
                 backgroundColor: "yellow",
                 // borderColor: "#1d3681",
                 data: arr_cash_en
             },{
-                label: "Inv(J)",
+                label: "Inv(JPY)",
                 backgroundColor: "red",
                 data: arr_inv_jp
             },{
-                label: "Inv(D)",
+                label: "Inv(USD)",
                 backgroundColor: "blue",
                 data: arr_inv_en
             },{
-                label: "Stock(US)",
+                label: "Stock(USD)",
                 backgroundColor: "green",
                 data: arr_stock_us
             },{

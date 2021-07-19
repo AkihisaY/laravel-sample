@@ -2,7 +2,7 @@
 <div class="row mt-2">
     <div class="col-sm">
         <p class="h5">URL<p>
-        <pre class="prettyprint">http://localhost:8000/get_api?function=monthly_asset&key=[project_key]&user_id=[user_id]&month=[yyyymm]</pre>
+        <pre class="prettyprint">http://localhost/data/get_api?function=monthly_asset&key=[project_key]&user_id=[user_id]&month=[yyyymm]</pre>
     </div>
 </div>
 
@@ -26,9 +26,9 @@ month=[yyyymm]      //date </pre>
         "asset_id": 27,                //asset id
         "date": "07/2021",             //date
         "cash_jpy": "827",             //cash JPY 
-        "cash_dol": "11203",           //cash Dollar
+        "cash_usd": "11203",           //cash USD
         "cash_inv_jpy": "9876",        //cash for investiment JPY
-        "cash_inv_dol": "5678",        //cash for investiment Dollar
+        "cash_inv_usd": "5678",        //cash for investiment USD
         "stock_us": "875293",          //amount of stock for USA
         "stock_other": "18392",        //amount of stock for other
         "total_amount": "577890"       //total amount
@@ -41,7 +41,7 @@ month=[yyyymm]      //date </pre>
 <div class="row mt-2">
     <div class="col-sm">
         <p class="h5">Example Source Code(Get)<p>
-        <pre class="prettyprint">$url = 'http://localhost:8000/get_api?';
+        <pre class="prettyprint">$url = 'http://localhost/data/get_api?';
 $query = ['function'=>'monthly_asset'
 	,'user_id'=>'8'
     ,'key'=>'tH09vSWLOG'

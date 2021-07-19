@@ -24,8 +24,8 @@ class Asset extends Model
                 'ta.asset_id'
                 ,'ta.target_date'
                 ,DB::raw("to_char(ta.target_date,'mm/yyyy') as display_date")
-                ,'ta.cash_jpy','ta.cash_dol'
-                ,'ta.cash_inv_jpy','ta.cash_inv_dol'
+                ,'ta.cash_jpy','ta.cash_usd'
+                ,'ta.cash_inv_jpy','ta.cash_inv_usd'
                 ,'ta.stock_us','ta.stock_other'
                 ,'tr.rate'
             )
@@ -56,8 +56,8 @@ class Asset extends Model
                 'ta.asset_id'
                 ,'ta.target_date'
                 ,DB::raw("to_char(ta.target_date,'mm/yyyy') as display_date")
-                ,'ta.cash_jpy','ta.cash_dol'
-                ,'ta.cash_inv_jpy','ta.cash_inv_dol'
+                ,'ta.cash_jpy','ta.cash_usd'
+                ,'ta.cash_inv_jpy','ta.cash_inv_usd'
                 ,'ta.stock_us','ta.stock_other'
                 ,'tr.rate'
             )
@@ -87,9 +87,9 @@ class Asset extends Model
             ->insert([
                 'target_date' => $arr_data[0]
                 ,'cash_jpy' => $arr_data[1]
-                ,'cash_dol' => $arr_data[2]
+                ,'cash_usd' => $arr_data[2]
                 ,'cash_inv_jpy' => $arr_data[3]
-                ,'cash_inv_dol' => $arr_data[4]
+                ,'cash_inv_usd' => $arr_data[4]
                 ,'stock_us' => $arr_data[5]
                 ,'stock_other' => $arr_data[6]
                 ,'create_date' => NOW()
@@ -135,8 +135,8 @@ class Asset extends Model
         DB::beginTransaction();
         try{
             $asset = DB::table('t_asset')
-            ->select( 'cash_jpy','cash_dol','cash_inv_jpy'
-            ,'cash_inv_dol','stock_us','stock_other')
+            ->select( 'cash_jpy','cash_usd','cash_inv_jpy'
+            ,'cash_inv_usd','stock_us','stock_other')
             ->where(DB::raw("to_char(target_date,'yyyymm')"),'=',$date)
             ->get();
 
@@ -157,8 +157,8 @@ class Asset extends Model
         try{
             $asset = DB::table('t_asset')
             ->select(DB::raw("to_char(target_date,'mm/yy') input_date")
-            ,'cash_jpy','cash_dol','cash_inv_jpy'
-            ,'cash_inv_dol','stock_us','stock_other')
+            ,'cash_jpy','cash_usd','cash_inv_jpy'
+            ,'cash_inv_usd','stock_us','stock_other')
             ->where(DB::raw("COALESCE(delete_flg,'')"),'<>','1')
             ->limit(5)
             ->orderby('target_date','desc')

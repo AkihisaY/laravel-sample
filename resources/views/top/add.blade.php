@@ -30,7 +30,7 @@
       <div class="col-sm-6"></div>
     </div>
     <div class="form-group row">
-      <label for="inputCashjpy" class="col-sm-3 col-form-label col-form-label-sm">Cash Jpy</label>
+      <label for="inputCashjpy" class="col-sm-3 col-form-label col-form-label-sm">Cash JPY</label>
       <div class="col-sm-3">
         <input type="number" class="form-control form-control-sm" id="inputCashjpy" name="cash_jpy_name" value="{{old('cash_jpy_name')}}">
         @error('cash_jpy_name')
@@ -40,7 +40,7 @@
       <div class="col-sm-6"></div>
     </div>
     <div class="form-group row">
-      <label for="inputCashdoll" class="col-sm-3 col-form-label col-form-label-sm">Cash Dollar</label>
+      <label for="inputCashdoll" class="col-sm-3 col-form-label col-form-label-sm">Cash USD</label>
       <div class="col-sm-3">
         <input type="number" class="form-control form-control-sm" id="inputCashdoll" name="cash_dol_name" value="{{old('cash_dol_name')}}">
         @error('cash_dol_name')
@@ -50,7 +50,7 @@
       <div class="col-sm-6"></div>
     </div>
     <div class="form-group row">
-      <label for="inputInvjpy" class="col-sm-3 col-form-label col-form-label-sm">Cash for investiment Jpy</label>
+      <label for="inputInvjpy" class="col-sm-3 col-form-label col-form-label-sm">Cash for investiment JPY</label>
       <div class="col-sm-3">
         <input type="number" class="form-control form-control-sm" id="inputInvjpy" name="inv_jpy_name" value="{{old('inv_jpy_name')}}">
         @error('inv_jpy_name')
@@ -60,7 +60,7 @@
       <div class="col-sm-6"></div>
     </div>
     <div class="form-group row">
-      <label for="inputInvdoll" class="col-sm-3 col-form-label col-form-label-sm">Cash for investiment Dollar</label>
+      <label for="inputInvdoll" class="col-sm-3 col-form-label col-form-label-sm">Cash for investiment USD</label>
       <div class="col-sm-3">
         <input type="number" class="form-control form-control-sm" id="inputInvdoll" name="inv_dol_name" value="{{old('inv_dol_name')}}">
         @error('inv_dol_name')
