@@ -48,6 +48,9 @@ Route::post('api/recover', 'App\Http\Controllers\ApiController@recover');
 //Document
 Route::get('document', 'App\Http\Controllers\DocumentController@index');
 
+//Expense
+Route::get('expense', 'App\Http\Controllers\ExpenseController@index');
+
 //Ajax
 //Chart JS
 Route::get('top/stocks', 'App\Http\Controllers\TopController@stocks');

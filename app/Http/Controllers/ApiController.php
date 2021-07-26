@@ -112,6 +112,8 @@ class ApiController extends Controller
                 $ret_arr = $api_info->getMonthlyAsset($request->month);
             }elseif($request->function == 'total_asset'){
                 $ret_arr = $api_info->getTotalAsset();
+            }elseif($request->function == 'expense_list'){
+                $ret_arr = $api_info->getExpenseList();
             }
             $status = true;
             if(!isset($ret_arr)){

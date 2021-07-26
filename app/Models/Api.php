@@ -69,4 +69,31 @@ class Api extends Model
         }
     }
 
+
+    /**
+     * Get Expense List
+     * 
+     * @return array $expenses 
+     */
+    public function getExpenseList(){
+        try{
+            $data = DB::table(DB::raw('t_expense'))
+                ->select(
+                    'expense_id'
+                    ,DB::raw("to_char(pay_date,'mm/dd/yyyy') as pay_date")
+                    ,'pay_amount'
+                    ,'contents'
+                    ,'city'
+                    ,'state'
+                    ,'country'
+                )
+                ->orderby('expense_id','desc');
+
+            return $data->get();
+        }catch(\Exception $e){
+            Log::debug($e->getMessage());
+            return null;
+        }
+    }
+
 }

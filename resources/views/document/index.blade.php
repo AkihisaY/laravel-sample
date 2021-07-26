@@ -18,6 +18,7 @@
       <div class="list-group" id="list-tab" role="tablist">
         <a class="list-group-item list-group-item-action active" id="list-home-list" data-toggle="list" href="#list-home" role="tab" aria-controls="home">Monthly Asset</a>
         <a class="list-group-item list-group-item-action" id="list-profile-list" data-toggle="list" href="#list-profile" role="tab" aria-controls="profile">Total Asset</a>
+        <a class="list-group-item list-group-item-action" id="list-expense-list" data-toggle="list" href="#list-expense" role="tab" aria-controls="expense">Expense</a>
       </div>
     </div>
     <div class="col-9">
@@ -27,6 +28,9 @@
         </div>
         <div class="tab-pane fade" id="list-profile" role="tabpanel" aria-labelledby="list-profile-list">
           @include('document.details.total_asset')
+        </div>
+        <div class="tab-pane fade" id="list-expense" role="tabpanel" aria-labelledby="list-expense-list">
+          @include('document.details.expense_list')
         </div>
       </div>
     </div>

@@ -7,6 +7,7 @@ class Common
 
     public const ROOT_PATH = 'http://localhost:8000/';
     public const PAGE = 8;
+    public const PAGE_EXPENSE = 20;
 
     /**
      * Set Hash

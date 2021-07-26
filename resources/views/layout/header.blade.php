@@ -22,7 +22,7 @@
       <div class="collapse navbar-collapse" id="navbarToogleContent">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
-            <a class="nav-link" href="/data/analysis"><i class="fas fa-chart-pie"></i> Analysis</a>
+            <a class="nav-link" href="/data/expense"><i class="fas fa-cloud-sun"></i> Expense</a>
           </li>
           <li class="nav-item active">
             <a class="nav-link" href="/data/api"><i class="fas fa-key"></i> Apikey</a>
