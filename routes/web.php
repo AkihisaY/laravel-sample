@@ -50,6 +50,8 @@ Route::get('document', 'App\Http\Controllers\DocumentController@index');
 
 //Expense
 Route::get('expense', 'App\Http\Controllers\ExpenseController@index');
+Route::get('expense/csv', 'App\Http\Controllers\ExpenseController@csv');
+Route::post('expense/csv', 'App\Http\Controllers\ExpenseController@import');
 
 //Ajax
 //Chart JS

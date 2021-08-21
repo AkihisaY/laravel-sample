@@ -32,4 +32,36 @@ class Expense extends Model
         }
     }
 
+    /**
+     * Import Expense csv
+     * 
+     * @param array $arr_data
+     * @return boolean false/true
+     */
+    public function importCsv($arr_data){
+        DB::beginTransaction();
+        try{
+            foreach($arr_data as $data){
+                // dd($data);
+                DB::table('t_expense')
+                ->insert([
+                    'pay_date' => trim($data[0])
+                    ,'pay_amount' => $data[1]
+                    ,'contents' => trim($data[2])
+                    ,'city' => trim($data[3])
+                    ,'state' => trim($data[4])
+                    ,'country' => trim($data[5])
+                    ,'create_date' => NOW()
+                ]);
+            }
+            DB::commit();
+            return true;
+        }catch(\Exception $e){
+            Log::debug('Unexpected Error!...');
+            Log::debug($e->getMessage());
+            DB::rollback();
+            return false;
+        } 
+    }
+
 }

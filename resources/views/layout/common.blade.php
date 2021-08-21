@@ -10,6 +10,7 @@
 <script src="https://unpkg.com/@popperjs/core@2"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <!-- <script src="{{asset('js/jquery-3.5.0.min.js')}}"></script> -->
+<!-- Bootstrap -->
 <script src="{{asset('js/bootstrap.min.js')}}"></script>
 <link href="{{asset('css/bootstrap.min.css')}}" rel="stylesheet">
 <!-- Fontaweome -->

@@ -11,7 +11,14 @@
 @section('content')
 <!-- <script src="{{asset('js/myapi.js')}}"></script> -->
 <div class="container">
-  <p class="h5 mt-5">Expense</p>
+  <div class="row mt-3">
+    <div class="col-sm-2">
+      <p class="h5">Expense</p>
+    </div>
+    <div class="col-sm-10 text-right">
+      <a href="/data/expense/csv" class="btn btn-success btn-sm">Import Csv</a>
+    </div>
+  </div>
   <hr>
   <div class="row">
     <div class="col-sm">
