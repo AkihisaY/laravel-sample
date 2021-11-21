@@ -1,13 +1,13 @@
 ## About This System
 
-Built this system to understand and control the status of my assets easily.  I implemented functions as below. I assume that this system is only internal usage not commercial usage.
+Built this system to understand and control the status of my assets easily. I implemented functions as below. I assume that this system is only internal usage not commercial usage.
 - Create Users
 - Login to Users
 - Browse category list of assets
 - Register assets per month
 - Create API key
 - Provide asset information with JSON format by using API key
-
+- Import CSV
 
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
 

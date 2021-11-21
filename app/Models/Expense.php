@@ -33,7 +33,8 @@ class Expense extends Model
                         ->orWhere('contents','ilike','%'.$keyword.'%')
                         ->orWhere('city','ilike','%'.$keyword.'%')
                         ->orWhere('state','ilike','%'.$keyword.'%')
-                        ->orWhere('country','ilike','%'.$keyword.'%');                    });      
+                        ->orWhere('country','ilike','%'.$keyword.'%');
+                    });      
                 }
             }
             // Log::debug($expenses->toSql());
