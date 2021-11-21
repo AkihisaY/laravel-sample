@@ -22,9 +22,13 @@ class ExpenseController extends Controller
     public function index(Request $request){
         if($request->session()->get('user_name') != ""){
             Log::info($request->session()->get('user_name').' : == Open Expense Page ==');
+            $search_key = $request->keywords;
+            Log::debug($request->session()->get('user_name').' :  Get Keywords : '.$search_key);
+            $keywords = explode(" ",$search_key);
+
             $expense_info = new Expense();
-            $expenses = $expense_info->getExpenseList(); 
-            return view('expense.index',['expenses'=>$expenses]);
+            $expenses = $expense_info->getExpenseList($keywords);            
+            return view('expense.index',['expenses'=>$expenses,'search_key' => $search_key]);
         }else{
             return view('login.index',['msg'=>'','url'=>url()->full()]); 
         }
@@ -75,7 +79,7 @@ class ExpenseController extends Controller
                    //Get Each Column Data
                    $arr_data[] = $row;
                 });
-        
+                
                 //parse CSV Data
                 $lexer_in->parse($file_path,$interpreter);
                 //Delete Tmp File

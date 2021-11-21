@@ -15,15 +15,31 @@ class Expense extends Model
     /**
      * Get Expense List
      * 
+     * @param array $keywords
      * @return array $expenses
      */
-    public function getExpenseList(){
+    public function getExpenseList($keywords){
         try{
             $expenses = DB::table('t_expense')
             ->select('expense_id',DB::raw("to_char(pay_date,'mm/dd/yyyy') pay_date")
-            ,'pay_amount','contents','city','state','country')
-            ->orderby('expense_id','desc')
-            ->paginate(Common::PAGE_EXPENSE);
+            ,'pay_amount','contents','city','state','country');
+
+            foreach($keywords as $keyword){
+                Log::debug('Keyword : '.trim($keyword));
+                $keyword = trim($keyword);
+                if($keyword <> ''){
+                    $expenses = $expenses->where(function ($query) use ($keyword) {
+                        return $query
+                        ->orWhere('contents','ilike','%'.$keyword.'%')
+                        ->orWhere('city','ilike','%'.$keyword.'%')
+                        ->orWhere('state','ilike','%'.$keyword.'%')
+                        ->orWhere('country','ilike','%'.$keyword.'%');                    });      
+                }
+            }
+            // Log::debug($expenses->toSql());
+            $expenses = $expenses
+                ->orderby('expense_id','desc')
+                ->paginate(Common::PAGE_EXPENSE);
 
             return $expenses;        
         }catch(\Exception $e){
@@ -57,7 +73,7 @@ class Expense extends Model
             DB::commit();
             return true;
         }catch(\Exception $e){
-            Log::debug('Unexpected Error!...');
+            Log::debug('Unexpected Error!...==> RorllBack!');
             Log::debug($e->getMessage());
             DB::rollback();
             return false;
