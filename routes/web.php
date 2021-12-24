@@ -1,7 +1,11 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\LoginController;
+use App\Http\Controllers\TopController;
+use App\Http\Controllers\ApiController;
+use App\Http\Controllers\DocumentController;
+use App\Http\Controllers\ExpenseController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -18,43 +22,45 @@ Route::get('/', function () {
 });
 
 //Login
-Route::get('login', 'App\Http\Controllers\LoginController@index');
-Route::post('login', 'App\Http\Controllers\LoginController@login');
+Route::get('login', [LoginController::class,'index']);
+Route::post('login', [LoginController::class,'login']);
 //Logout
-Route::get('logout', 'App\Http\Controllers\LoginController@logout');
+Route::get('logout', [LoginController::class,'logout']);
 //Reset Login
-Route::get('reset', 'App\Http\Controllers\LoginController@reset');
+Route::get('reset', [LoginController::class,'reset']);
 //Error
-Route::get('error', 'App\Http\Controllers\LoginController@error');
+Route::get('error', [LoginController::class,'error']);
 //Time Out
-Route::get('timeout', 'App\Http\Controllers\LoginController@timeout');
+Route::get('timeout', [LoginController::class,'timeout']);
 //Create/Edit Login
-Route::get('login/add', 'App\Http\Controllers\LoginController@create');
-Route::post('login/create', 'App\Http\Controllers\LoginController@insert');
+Route::get('login/add', [LoginController::class,'create']);
+Route::post('login/create', [LoginController::class,'insert']);
 
-Route::get('top', 'App\Http\Controllers\TopController@index');
+Route::get('top', [TopController::class,'index']);
 //Add Asset
-Route::get('top/add', 'App\Http\Controllers\TopController@create');
-Route::post('top/add', 'App\Http\Controllers\TopController@insert');
-Route::get('top/delete', 'App\Http\Controllers\TopController@delete');
+Route::get('top/add', [TopController::class,'create']);
+Route::post('top/add', [TopController::class,'insert']);
+Route::get('top/delete', [TopController::class,'delete']);
 
 //Api
-Route::get('get_api', 'App\Http\Controllers\ApiController@getApi');
-Route::get('api', 'App\Http\Controllers\ApiController@index');
-Route::post('api/create', 'App\Http\Controllers\ApiController@create');
-Route::post('api/delete', 'App\Http\Controllers\ApiController@delete');
-Route::post('api/recover', 'App\Http\Controllers\ApiController@recover');
+Route::get('get_api', [ApiController::class,'getApi']);
+Route::get('api', [ApiController::class,'index']);
+Route::post('api/create', [ApiController::class,'create']);
+Route::post('api/delete', [ApiController::class,'delete']);
+Route::post('api/recover', [ApiController::class,'recover']);
 
 //Document
-Route::get('document', 'App\Http\Controllers\DocumentController@index');
+// Route::get('document', 'App\Http\Controllers\DocumentController@index');
+Route::get('document', [DocumentController::class,'index']);
 
 //Expense
-Route::get('expense', 'App\Http\Controllers\ExpenseController@index');
-Route::get('expense/csv', 'App\Http\Controllers\ExpenseController@csv');
-Route::post('expense/csv', 'App\Http\Controllers\ExpenseController@import');
+// Route::post('expense/csv', 'App\Http\Controllers\ExpenseController@import');
+Route::get('expense', [ExpenseController::class,'index']);
+Route::get('expense/csv', [ExpenseController::class,'csv']);
+Route::post('expense/csv', [ExpenseController::class,'import']);
 
 //Ajax
 //Chart JS
-Route::get('top/stocks', 'App\Http\Controllers\TopController@stocks');
-Route::get('top/assets', 'App\Http\Controllers\TopController@totalAsset');
-Route::get('top/month_assets', 'App\Http\Controllers\TopController@monthAssets');
+Route::get('top/stocks', [TopController::class,'stocks']);
+Route::get('top/assets', [TopController::class,'totalAsset']);
+Route::get('top/month_assets', [TopController::class,'monthAssets']);
