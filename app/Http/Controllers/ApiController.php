@@ -127,4 +127,21 @@ class ApiController extends Controller
         }        
     }
 
+    /**
+     * Get total API from api.php
+     * 
+     * @param sRequest $request
+     * @return json 
+     */
+    public function api_total(Request $request){
+        $api_info = new Api();
+        $ret_arr = $api_info->getTotalAsset();
+        $status = true;
+        if(!isset($ret_arr)){
+            $status = false;
+        }
+        return response()->json(['status'=>$status,'result'=>$ret_arr]);
+
+
+    }
 }
