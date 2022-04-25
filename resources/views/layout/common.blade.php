@@ -6,6 +6,7 @@
 <meta name="description" itemprop="description" content="@yield('description')">
 <meta name="keywords" itemprop="keywords" content="@yield('keywords')">
 <meta name="csrf-token" content="{{ csrf_token() }}">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <!-- <link href="/css/star/layout.css" rel="stylesheet"> -->
 <script src="https://unpkg.com/@popperjs/core@2"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
